@@ -1,1 +1,41 @@
+version: '3.8'
 services:
+  ivr_stand:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    restart: always
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER= #postgres
+      - DATABASE_PASSWORD= #Введи пароль
+      - DATABASE_NAME= #введи название
+    depends_on:
+      - db
+    networks:
+      - ivr_network
+
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: #postgres
+      POSTGRES_PASSWORD: #Введи пароль
+      POSTGRES_DB: #введи название
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - ivr_network
+
+networks:
+  ivr_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
