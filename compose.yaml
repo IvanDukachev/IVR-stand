@@ -18,8 +18,8 @@ services:
 
     networks:
       - ivr_network
-#    devices:
-#      - /dev/video0:/dev/video0
+    devices:
+      - /dev/video0:/dev/video0
 
 
   db:
@@ -36,6 +36,18 @@ services:
     restart: always
     networks:
       - ivr_network
+
+  rsl_api:
+    container_name: rsl-api
+    build:
+      context: RSL-Recognition-API/
+      dockerfile: Dockerfile_rsl_api
+    ports:
+      - "5000:5000"
+    restart: always
+    networks:
+      - ivr_network
+
 
 networks:
   ivr_network:

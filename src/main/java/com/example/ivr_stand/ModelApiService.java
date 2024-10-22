@@ -9,6 +9,7 @@ import java.net.URISyntaxException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 @Service
 public class ModelApiService {
 
@@ -16,7 +17,7 @@ public class ModelApiService {
 
     public ModelApiService() {
         try {
-            socket = IO.socket("http://localhost:5000");
+            socket = IO.socket("http://rsl-api:5000");
 
             socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
                 @Override
