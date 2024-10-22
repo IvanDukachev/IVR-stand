@@ -1,5 +1,6 @@
 package com.example.ivr_stand;
 
+import nu.pattern.OpenCV;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.videoio.VideoCapture;
@@ -14,7 +15,7 @@ import java.util.Base64;
 public class CameraService {
 
     static {
-        nu.pattern.OpenCV.loadShared();
+        OpenCV.loadLocally();
     }
 
     public void startCamera(WebSocketController socketController, ModelApiService modelApiService) {
