@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="items")
+@Table(name="services")
 public class Item {
     @Id
     private Integer id;
