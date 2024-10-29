@@ -61,6 +61,7 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -80,13 +81,6 @@
             <version>4.8.1-0</version>
         </dependency>
 
-
-        <!-- Spring Web для работы с REST и WebSocket -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!-- Добавляем поддержку WebSocket в Spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -104,6 +98,17 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -112,6 +117,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
                     <mainClass>com.example.ivr_stand.IvrStandApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
