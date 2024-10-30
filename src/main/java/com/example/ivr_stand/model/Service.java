@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 
 @Data
@@ -20,9 +20,9 @@ public class Service {
     private String description;
     private String video_url;
 
-    @UpdateTimestamp
+    @CreatedDate
     private Timestamp created_at;
 
-    @CreationTimestamp
+    @LastModifiedDate
     private Timestamp updated_at;
 }

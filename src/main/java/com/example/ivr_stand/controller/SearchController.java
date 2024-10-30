@@ -1,4 +1,6 @@
-package com.example.ivr_stand;
+package com.example.ivr_stand.controller;
+import com.example.ivr_stand.model.SearchRequest;
+import com.example.ivr_stand.model.SearchResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

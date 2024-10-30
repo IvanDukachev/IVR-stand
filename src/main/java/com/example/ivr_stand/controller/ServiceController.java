@@ -1,7 +1,7 @@
-package com.example.ivr_stand;
+package com.example.ivr_stand.controller;
 
 import com.example.ivr_stand.model.Service;
-import com.example.ivr_stand.repo.ServiceRepo;
+import com.example.ivr_stand.repository.ServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

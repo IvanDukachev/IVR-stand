@@ -1,4 +1,4 @@
-package com.example.ivr_stand.repo;
+package com.example.ivr_stand.repository;
 
 import com.example.ivr_stand.model.Service;
 import org.springframework.data.jpa.repository.JpaRepository;

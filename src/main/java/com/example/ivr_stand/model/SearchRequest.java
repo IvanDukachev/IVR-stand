@@ -1,4 +1,4 @@
-package com.example.ivr_stand;
+package com.example.ivr_stand.model;
 
 public class SearchRequest {
     private String query;
