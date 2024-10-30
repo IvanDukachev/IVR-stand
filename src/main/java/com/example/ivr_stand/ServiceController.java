@@ -1,7 +1,7 @@
 package com.example.ivr_stand;
 
-import com.example.ivr_stand.model.Item;
-import com.example.ivr_stand.repo.ItemRepo;
+import com.example.ivr_stand.model.Service;
+import com.example.ivr_stand.repo.ServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,19 +12,19 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class ItemController {
+public class ServiceController {
     @Autowired
-    private ItemRepo itemRepo;
+    private ServiceRepo serviceRepo;
 
     @GetMapping("/getItems")
-    public List<Item> getItems() {
-        return itemRepo.findAll();
+    public List<Service> getItems() {
+        return serviceRepo.findAll();
     }
 
 
     @GetMapping("/getItem/{id}")
-    public ResponseEntity<Item> getItemById(@PathVariable Integer id) {
-        Optional<Item> item = itemRepo.findById(id);
+    public ResponseEntity<Service> getItemById(@PathVariable Integer id) {
+        Optional<Service> item = serviceRepo.findById(id);
 
         if (item.isPresent()) {
             return ResponseEntity.ok(item.get());
