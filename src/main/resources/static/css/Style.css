@@ -339,7 +339,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background-color: transparent;
+    background: linear-gradient(45deg, rgb(0, 161, 255), rgb(23, 52, 206), rgb(169, 0, 203), rgb(243, 15, 23));
     border: 3px solid #fff;
     border-radius: 45px;
     padding: 0 20px;
@@ -349,6 +349,10 @@ header {
     padding: 0;
     overflow: hidden;
     height: 100px;
+
+    position: fixed; /* Закрепляет кнопку */
+    bottom: 10px; /* Отступ снизу экрана */
+    z-index: 1000; /* Обеспечивает, что кнопка будет поверх других элементов */
   }
   
 .button-bottom span {

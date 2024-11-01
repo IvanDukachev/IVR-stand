@@ -1,5 +1,5 @@
 const flag = localStorage.getItem('flag');
-if (flag == "True") {
+if (flag == 1) {
   document.getElementById('b1').innerHTML = '<img src="images/pop.gif" alt="gif" id="my-image"><img src="images/1usluga.png" draggable="false" alt="Картинка"><span class="no-copy">Подача заявления на назначение пенсии</span>';
   document.getElementById('b2').innerHTML = '<img src="images/pop.gif" alt="gif"id="my-image"><img src="images/lgota.png" alt="Картинка"><span class="no-copy">Изменение способа доставки пенсии и иных социальных выплат</span>'
   document.getElementById('b3').innerHTML = '<img src="images/pop.gif" alt="gif"id="my-image"><img src="images/prochee.png" alt="Картинка"><span class="no-copy">Получение справки о размере пенсии и иных социальных выплат</span>'
