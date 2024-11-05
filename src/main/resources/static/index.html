@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
   <title>Социальный фонд России</title>
   <link rel="stylesheet" type="text/css" href="stylemax.css">
-</head>
-<body>
+  </head>
+  <body>
     <header>
         <div class="header-content">
           <img src="images/Логотип БЕЛЫЙ 2.png" alt="Логотип" class="logo">
@@ -14,12 +14,12 @@
       </header>
       <div class="middle-text no-copy">Выберите удобный способ навигации</div>
       <div class="container">
-        <button class="button" onclick="document.location='category.html?flag=True'">
-          <img src="images/image_861609180322028143900.gif" alt="Картинка">
+        <button class="button" onclick="document.location='category.html'" id="Zhest">
+          <img src="images/pop.gif" alt="Картинка">
           <span class="no-copy">Жестовый язык</span>
         </button>
-        <button class="button" onclick="document.location='category.html?flag=false'">
-          <img src="images/image_861609180322028143900.gif" alt="Картинка">
+        <button class="button" onclick="document.location='category.html'"id="Text">
+          <img src="images/pop.gif" alt="Картинка">
           <span class="no-copy">Простой язык</span>
         </button>
       </div>
@@ -27,5 +27,6 @@
         <img src="images/logoSberAI.png" alt="Логотип Сбер АИ">
         <span class="no-copy">Модель распознавания русского жестового языка разработана командой:</span>
       </button>
-</body>
+      <script src="scripts/index.js"></script>
+  </body>
 </html>
