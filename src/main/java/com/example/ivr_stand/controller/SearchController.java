@@ -1,20 +1,27 @@
 package com.example.ivr_stand.controller;
+import com.example.ivr_stand.model.Category;
 import com.example.ivr_stand.model.SearchRequest;
 import com.example.ivr_stand.model.SearchResponse;
+import com.example.ivr_stand.repository.CategoryRepo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@RestController
+import java.util.Optional;
+
+@Controller
 @RequestMapping("/api")
 public class SearchController {
+
+    @Autowired
+    private CategoryRepo categoryRepo;
 
     private final RestTemplate restTemplate;
 
@@ -26,20 +33,29 @@ public class SearchController {
     }
 
     @PostMapping("/search")
-    public ResponseEntity<?> searchService(@RequestBody SearchRequest request) {
+    public String searchService(@ModelAttribute SearchRequest request, Model model) {
         String url = fastApiUrl + "/search";
+        String searchText = request.getQuery();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<SearchRequest> entity = new HttpEntity<>(request, headers);
+        SearchRequest requestForApi = new SearchRequest();
+        requestForApi.setQuery(searchText);
+
+        HttpEntity<SearchRequest> entity = new HttpEntity<>(requestForApi, headers);
 
         try {
             // Отправка POST-запроса к FastAPI
             ResponseEntity<SearchResponse> response = restTemplate.postForEntity(url, entity, SearchResponse.class);
-            return ResponseEntity.ok(response.getBody());
+            Optional<Category> category = categoryRepo.findById(1);
+            model.addAttribute("imgsize", ServiceController.imgsize);
+            model.addAttribute("category", category.get());
+            model.addAttribute("services", response.getBody().getResults());
+            return "services_template";
+//            return ResponseEntity.ok(response.getBody());
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Ошибка при отправке запроса: " + e.getMessage());
+          return "error_template";
         }
     }
 }

@@ -20,6 +20,9 @@ public class Service {
     private String description;
     private String video_url;
 
+    @Column(name = "category_id")
+    private Integer categoryId;
+
     @CreatedDate
     private Timestamp created_at;
 

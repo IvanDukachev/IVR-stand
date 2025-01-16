@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Социальный фонд России</title>
+  <link rel="stylesheet" type="text/css" href="/css/stylemax.css">
+  </head>
+  <body>
+    <header>
+        <div class="header-content">
+          <img src="/images/Логотип%20БЕЛЫЙ%202.png" alt="Логотип" class="logo">
+          <div class="divider"></div>
+          <span class="header-text no-copy">Главная страница</span>
+        </div>
+      </header>
+      <div class="middle-text no-copy">Выберите удобный способ навигации</div>
+<!--      <div class="container">-->
+
+        <form class="container" action="/gesture" method="POST">
+          <button class="button" id="Zhest" onclick="setButtonId(this.id)">
+            <img src="/images/zhest.gif" alt="Картинка">
+            <span class="no-copy">Жестовый язык</span>
+          </button>
+          <button class="button" id="Text" onclick="setButtonId(this.id)">
+            <img src="/images/simplel.gif" alt="Картинка">
+            <span class="no-copy">Простой язык</span>
+          </button>
+
+          <input type="hidden" name="buttonId" id="buttonId" value="" >
+        </form>
+<!--      </div>-->
+      <button class="button-bottom">
+        <img src="/images/logoSberAI.png" alt="Логотип Сбер АИ">
+        <span class="no-copy">Модель распознавания русского жестового языка разработана командой:</span>
+      </button>
+      <script src="/js/index.js"></script>
+  </body>
+</html>

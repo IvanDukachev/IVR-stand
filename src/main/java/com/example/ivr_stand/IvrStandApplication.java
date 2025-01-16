@@ -18,7 +18,7 @@ public class IvrStandApplication {
 
         modelApiService.connect();
 
-        new Thread(() -> cameraService.startCamera(socketController, modelApiService)).start();
+//        new Thread(() -> cameraService.startCamera(socketController, modelApiService)).start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             modelApiService.disconnect();

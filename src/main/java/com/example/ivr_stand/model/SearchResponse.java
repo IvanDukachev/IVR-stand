@@ -1,5 +1,8 @@
 package com.example.ivr_stand.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class SearchResponse {

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Социальный фонд России</title>
+    <link rel="stylesheet" type="text/css" href="css/Style.css">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <img src="images/Логотип БЕЛЫЙ 2.png" draggable="false" alt="Логотип" class="logo">
+        <div class="divider"></div>
+        <span class="header-text no-copy">Выбор категорий</span>
+    </div>
+</header>
+<div class="top">
+    <form id="back-button" action="/" method="GET" class="topform">
+        <button class="backbutton">
+            <img src="/images/ещё одна стрелочка.png" draggable="false" alt="Стрелка">
+            <span>Назад</span>
+        </button>
+    </form>
+
+    <form id="myForm" action="/api/search" method="POST" class="topform">
+        <input type="text" name="query"  placeholder="Поиск" id="userInput" class="topinput">
+        <button class='topbutton' type="submit" id="submitButton"><img src="images/лупа.png" draggable="false" alt="Картинка" width="45" height="45"></button>
+    </form>
+<!--    <button class="searchButton" id="openModal">-->
+<!--        <img src="images/cam.png" draggable="false" alt="Камера">-->
+<!--        <span>РЖЯ</span>-->
+<!--    </button>-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <img src="images/cam.png" alt="Камера" class="modal-icon">
+            </div>
+
+            <div class="camera-view">
+                <video id="cameraStream" autoplay></video>
+            </div>
+
+            <!-- Кнопки и поля формы -->
+            <div class="modal-body">
+                <button class="action-button" id = "back">
+                    <span>Закрыть</span>
+                </button>
+                <button class="action-button" id = "rcg">
+                </button>
+                <form id="formsearch" action="/api/search" method="POST">
+                    <button class="action-button" id = "search" th:onclick="onclick1()">
+                        <input name="query" type="hidden" id="userInput1" placeholder="Поиск" >
+                        <span>Поиск</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<form class="del" action="/category_id" method="POST">
+    <button type="submit" th:each="category : ${categories}" class="button" th:id="${category.id}" th:onclick="setButtonId([[${category.id}]])">
+        <img th:style="${imgsize}" th:src="'images/gif' + ${category.id} + '.gif'" alt="Картинка" id="my-image">
+        <img th:src="'images/img' + ${category.id} + '.png'" alt="Картинка">
+        <span class="no-copy" th:text="${category.name}">Категория</span>
+    </button>
+    <input type="hidden" name="buttonId" id="buttonId" value="">
+</form>
+<button class="button-bottom">
+    <img src="images/logoSberAI.png" alt="Логотип Сбер АИ">
+    <span class="no-copy">Модель распознавания русского жестового языка разработана командой:</span>
+</button>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+@font-face {
+    font-family: 'Montserrat Black';
+    src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat BlackItalic';
+    src: url('../fonts/Montserrat-BlackItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat BoldItalic';
+    src: url('../fonts/Montserrat-BoldItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat ExtraBold';
+    src: url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat ExtraBoldItalic';
+    src: url('../fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat ExtraLight';
+    src: url('../fonts/Montserrat-ExtraLight.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat ExtraLightItalic';
+    src: url('../fonts/Montserrat-ExtraLightItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Italic-VariableFont_wght';
+    src: url('../fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Italic';
+    src: url('../fonts/Montserrat-Italic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Light';
+    src: url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat LightItalic';
+    src: url('../fonts/Montserrat-LightItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Medium';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat MediumItalic';
+    src: url('../fonts/Montserrat-MediumItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Regular';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat SemiBoldItalic';
+    src: url('../fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat Thin';
+    src: url('../fonts/Montserrat-Thin.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat ThinItalic';
+    src: url('../fonts/Montserrat-ThinItalic.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat VariableFont_wght';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+  }
+
+
+body {
+  background-image: linear-gradient(135deg,
+    rgb(0, 161, 255),
+    rgb(23, 52, 206),
+    rgb(169, 0, 203), 
+    rgb(243, 15, 23)
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  user-select: none;
+}
+
+header {
+  position: relative;
+	top: 0;
+	left: 0;
+	width: 90%;
+	background-color: transparent;
+	border-bottom: 1px solid #fff;
+	margin: 0 auto;
+  }
+
+  .header-content {
+    display: flex;
+	  justify-content: center;
+    align-items: center;
+	  flex-wrap: wrap;
+
+  }
+  
+  .logo {
+    width: 480px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .divider {
+    width: 2px;
+    height: 90px;
+    background-color: #fff;
+    margin: 0 20px;
+    margin-left: -30px;
+    margin-right: 20px;
+  }
+  
+  .header-text {
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Montserrat Regular', sans-serif;
+
+  }
+
+  /* .middle-text {
+    margin: 20px auto 0 auto;
+    font-size: 38px;
+    color: #fff;
+    font-family: 'Montserrat Regular', sans-serif;
+    text-align: center;
+  } */
+  .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #back-button{
+      width: 200px;
+      height: 50px;
+      align-items: center;
+      justify-items: center;
+  }
+  .backbutton{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 45px;
+    padding: 0;
+    margin: 0 0 0 0;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .backbutton img{
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    max-height: 100%;
+    margin-top: -10px;
+    padding: 0 0 0 30%; 
+
+  }
+  .backbutton span{
+    grid-column: 2;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    padding: 0 0 10% 0;
+    margin-left: 0; 
+    font-family: 'Montserrat Regular', sans-serif;
+    z-index: 2;
+  }
+   .topform {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    margin-top: 20px;
+  } 
+  input[type="text"]{
+    border: 3px solid #fff;
+    border-radius: 45px 0 0 45px;
+    background-color: transparent;
+    width: 100%;
+    height: 42px;
+    margin-left: 20px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 32px;
+    font-family: 'Montserrat Regular', sans-serif;
+    color: #fff;
+  }
+  input:focus {
+    outline: none;
+  }
+  input::-webkit-input-placeholder {
+    color: #beb7b7; 
+    font-family: 'Montserrat Regular', sans-serif;
+  }
+  button[type="submit"]{
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 0 45px 45px 0;
+    background-color: white;
+    width: 75px;
+    padding-right: 30px;
+    margin-left: -50px
+  }
+  button[type="submit"]:hover {
+    cursor: pointer;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 100%;
+    margin: 0 auto;
+    height: 70%;
+  }
+
+  .button {
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 45px;
+    padding: 0;
+    width: 33%;
+    min-width: 460px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #my-image{
+    height: 250px;
+    flex-basis: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .button img {
+    float: left;
+    object-fit:contain;
+    padding-top: 0;
+    width: 150px;
+    height: 86px;
+    margin-top: 33px;
+    margin-bottom: 33px;
+    flex-basis: 150px;
+  }
+  .button span {
+    float: right;
+    grid-column: 3;
+    font-size: 28px;
+    color: #fff;
+    text-align: left;
+    padding: 0 0;
+    margin-top: 0;
+    width: calc(100% - 150px);
+    text-align: center;
+    font-family: 'Montserrat Regular', sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  .button-bottom {
+      display: grid;
+      grid-template-rows: 50% 50%;
+      align-items: center;
+      justify-items: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, rgb(0, 161, 255), rgb(23, 52, 206), rgb(169, 0, 203), rgb(243, 15, 23));
+      border: 3px solid #fff;
+      border-radius: 45px;
+      padding: 0 20px;
+      cursor: pointer;
+      width: 400px;
+      margin-top: 30px;
+      padding: 0;
+      overflow: hidden;
+      height: 100px;
+
+      position: fixed; /* Закрепляет кнопку */
+      bottom: 10px; /* Отступ снизу экрана */
+      z-index: 1000; /* Обеспечивает, что кнопка будет поверх других элементов */
+    }
+
+    /* Основной контейнер с доп. отступом */
+  body::after {
+    content: '';
+    display: block;
+    height: 120px; /* Этот отступ создаст место для кнопки */
+  }
+
+  /* Стилизация при полном скролле */
+  button-bottom.in-footer {
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .button-bottom span {
+    grid-row: 1;
+    padding-top: 5px;
+    font-size: 15px;
+    color: #fff;
+  }
+
+    .button-bottom img {
+      grid-row: 2;
+      width: 174px;
+      height: 37px;
+      object-fit: cover;
+      margin: 0;
+      padding-top: 0;
+      max-height: 100%;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+  .searchButton{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 45px;
+    padding: 0;
+    margin: 0 0 0 0;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .searchButton img{
+    grid-column: 1;
+    width: 85%;
+    height: 85%;
+    object-fit:cover;
+    max-height: 100%;
+    margin-top: -10px;
+    padding: 0 0 0 60%;
+
+  }
+
+  .searchButton span{
+    grid-column: 2;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    padding: 2% 10% 10% 0;
+    margin-left: 0;
+    font-family: 'Montserrat Regular', sans-serif;
+    z-index: 2;
+  }
+
+  .modal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+  }
+
+  .modal-content {
+    background: linear-gradient(45deg, rgb(0, 161, 255), rgb(23, 52, 206), rgb(169, 0, 203), rgb(243, 15, 23));
+    margin: 15% auto;
+    padding: 20px;
+    border: 3px solid #fff;
+    width: 50%;
+    max-width: 50%; /* Максимальная ширина */
+    border-radius: 45px;
+  }
+
+  .modal-header {
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .modal-header img {
+    width: 5%;
+    height: width;
+  }
+
+.modal-body {
+    align-items: center;
+    justify-items: center;
+    display:flex;
+    text-align: center;
+    margin: auto;
+  }
+.modal-body form{
+    margin: auto;
+}
+#search{
+width:175px;
+min-width:0px;
+}
+  .action-button {
+    display: table-row;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 45px;
+    padding: 0;
+    margin: 0 0 0 0;
+    width: 175px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: -5px;
+    cursor: pointer;
+    margin: auto;
+    min-width:175px;
+  }
+  .action-button span{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0 0 10% 0;
+    margin-left: 0;
+    font-family: 'Montserrat Regular', sans-serif;
+  }
+  #my-image{
+    background-color: rgb(22, 14, 103);
+    object-fit:scale-down;
+  }
+
+  .camera-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh; /* Задайте желаемую высоту */
+    margin: 20px 0; /* Добавить отступы сверху и снизу */
+    border: 3px solid #fff;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Фон для лучшего контраста */
+  }
+
+  #cameraStream {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Для масштабирования под размер контейнера */
+    border-radius: 15px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
