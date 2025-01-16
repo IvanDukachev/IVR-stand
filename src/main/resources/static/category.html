@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Социальный фонд России</title>
+  <link rel="stylesheet" type="text/css" href="css/Style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <img src="images/Логотип БЕЛЫЙ 2.png" draggable="false" alt="Логотип" class="logo">
+          <div class="divider"></div>
+          <span class="header-text no-copy">Выбор категорий</span>
+        </div>
+      </header>
+      <div class="top">
+        <button class="backbutton" onclick="document.location='index.html'">
+          <img src="images/ещё одна стрелочка.png" draggable="false" alt="Стрелка">
+          <span>Назад</span>
+        </button>
+        <form id="myForm" class="topform">
+          <input type="text" placeholder="Поиск" id="userInput" class="topinput">
+          <button class='topbutton' type="submit" id="submitButton"><img src="images/лупа.png" draggable="false" alt="Картинка" width="45" height="45"></button>
+        </form>
+      </div>
+      <form class="del" action="/services" method="POST">
+          <button class="button" id="b1" type="submit" onclick="setButtonId('b1')"></button>
+      
+          <button class="button" id="b2" type="submit" onclick="setButtonId('b2')"></button>
+      
+          <button class="button" id="b3" type="submit" onclick="setButtonId('b3')"></button>
+
+          <input type="hidden" name="buttonId" id="buttonId" value="" />
+      </form>
+      <button class="button-bottom">
+        <img src="images/logoSberAI.png" alt="Логотип Сбер АИ">
+        <span class="no-copy">Модель распознавания русского жестового языка разработана командой:</span>
+      </button>
+      <script src="js/script.js"></script>
+</body>
+</html>

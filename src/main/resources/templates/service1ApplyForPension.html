@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Социальный фонд России</title>
+  <link rel="stylesheet" type="text/css" href="css/stylemax.css">
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <img src="images/Логотип БЕЛЫЙ 2.png" alt="Логотип" class="logo">
+    <div class="divider"></div>
+    <span class="header-text no-copy" th:text="${service.name}">Подача заявления на назначение пенсии</span>
+  </div>
+</header>
+<div class="top">
+  <form id="back-button" action="/services" method="GET" class="topform">
+    <button class="backbutton">
+      <img src="/images/ещё одна стрелочка.png" draggable="false" alt="Стрелка">
+      <span>Назад</span>
+    </button>
+  </form>
+
+  <form id="myForm" action="/api/search" method="POST" class="topform">
+    <input type="text" name="query" id="userInput" placeholder="Поиск">
+    <button type="submit">
+      <img src="/images/лупа.png" draggable="false" alt="Картинка" width="45" height="45">
+    </button>
+  </form>
+<!--  <button class="searchButton" id="openModal">-->
+<!--    <img src="images/cam.png" draggable="false" alt="Камера">-->
+<!--    <span>РЖЯ</span>-->
+<!--  </button>-->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+        <img src="images/cam.png" alt="Камера" class="modal-icon">
+      </div>
+
+      <div class="camera-view">
+        <video id="cameraStream" autoplay></video>
+      </div>
+
+      <!-- Кнопки и поля формы -->
+      <div class="modal-body">
+        <button class="action-button" id = "back">
+          <span>Закрыть</span>
+        </button>
+        <button class="action-button" id = "rcg">
+        </button>
+
+        <form id="formsearch" action="/api/search" method="POST">
+          <button class="action-button" id = "search" th:onclick="onclick1()">
+            <input name="query" type="hidden" id="userInput1" placeholder="Поиск" >
+            <span>Поиск</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div class="feedback" id="myFeedback">
+    <div class="feedback-content">
+      <div class="feedbackdiv">
+        <div class="topfeedback">
+          <span class="center1">Обратная связь</span>
+          <span class="close1">×</span>
+        </div>
+        <form class="backtocat" action="/category" method="GET">
+          <button>
+            <span style="font-size: 32px;">Вернуться к списку категорий</span>
+          </button>
+        </form>
+        <form class="formsubmit1" action="/statistics/user-info" method="POST">
+          <span style="font-size: 32px;">Введите способ связи</span>
+          <input type="text" name="query" placeholder="Введите информацию для связи" style="font-size: 32px;">
+          <input type="hidden" name="serviceName" th:value="${service.name}">
+          <input type="hidden" name="serviceId" th:value="${service.id}">
+          <button type="submit">
+            <span style="font-size: 32px;">Подвердить</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+<!--  <img th:style="${imgsize}" src="/images/gifserv3.gif" alt="Картинка" id="my-image" draggable="false" style="object-fit:scale-down;">-->
+  <div class="container1" th:id="${service.id}">
+    <button class="button1" id="b1">
+    </button>
+  </div>
+  <div id="info-box" class="info-box">Загрузка информации...</div>
+  <div class="down-buttons">
+      <button class="one-buttons" id="openFeedback">
+        <img th:style="${imgsize}" src="/images/Help.gif" alt="Картинка" class="help">
+        <span>Нужна помощь</span>
+      </button>
+    <form action="/" method="GET">
+      <button class="two-buttons">
+        <img th:style="${imgsize}" src="/images/End.gif" alt="Картинка" class="help">
+        <input type="hidden" name="serviceName" th:value="${service.name}">
+        <input type="hidden" name="serviceId" th:value="${service.id}">
+        <span>Завершить сеанс</span>
+      </button>
+    </form>
+  </div>
+</main>
+  <button class="button-bottom">
+    <img src="images/logoSberAI.png" alt="Логотип Сбер АИ">
+    <span class="no-copy">Модель распознавания русского жестового языка разработана командой:</span>
+  </button>
+<script src="js/scriptftext.js"></script>
+</body>
+</html>

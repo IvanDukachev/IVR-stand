@@ -1,5 +1,8 @@
 package com.example.ivr_stand;
 
+import com.example.ivr_stand.controller.WebSocketController;
+import com.example.ivr_stand.sevice.CameraService;
+import com.example.ivr_stand.sevice.ModelApiService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +18,7 @@ public class IvrStandApplication {
 
         modelApiService.connect();
 
-        new Thread(() -> cameraService.startCamera(socketController, modelApiService)).start();
+//        new Thread(() -> cameraService.startCamera(socketController, modelApiService)).start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             modelApiService.disconnect();

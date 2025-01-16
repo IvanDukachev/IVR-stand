@@ -1,5 +1,6 @@
-package com.example.ivr_stand;
+package com.example.ivr_stand.sevice;
 
+import com.example.ivr_stand.controller.WebSocketController;
 import nu.pattern.OpenCV;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;

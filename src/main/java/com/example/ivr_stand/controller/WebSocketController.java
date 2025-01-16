@@ -1,4 +1,4 @@
-package com.example.ivr_stand;
+package com.example.ivr_stand.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.CloseStatus;
